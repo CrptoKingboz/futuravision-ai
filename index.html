@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuturaVision AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <img src="IMG_4899.PNG" class="logo" width="40">
+    <h2>FuturaVision AI</h2>
+  </div>
+  <div class="nav-right">
+    <span class="kelompok">KELOMPOK 67</span>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>FuturaVision AI</h1>
+  <p class="subtitle">Scan objek atau unggah foto untuk melihat dampaknya di masa depan</p>
+  
+  <div class="btn-group">
+    <button class="btn" onclick="init()">🎥 Start Camera</button>
+    <input type="file" id="uploadInput" accept="image/*" hidden onchange="handleUpload(event)">
+    <button class="btn btn-alt" onclick="document.getElementById('uploadInput').click()">📁 Upload Gambar</button>
+  </div>
+</div>
+
+<div class="container">
+ <div class="card">
+  <h3>📊 Indeks Dampak</h3>
+
+  <div class="progress">
+    <div id="impactBar" class="progress-bar" style="width:0%"></div>
+  </div>
+
+  <p id="impactValue" style="font-weight: bold; margin-bottom: 5px;">0%</p>
+
+  <div class="small" style="text-align: left; display: inline-block;">
+    <p>🟢 Hijau = Aman</p>
+    <p>🟡 Kuning = Sedang</p>
+    <p>🔴 Merah = Tinggi</p>
+  </div>
+</div>
+
+  <div class="card card-main">
+    <div id="webcam-container"></div>
+    <h3 id="result">Hasil : -</h3>
+    <p id="confidence" class="small"></p>
+    <button class="btn-reset" onclick="resetScan()">🔄 Scan Lagi</button>
+  </div>
+
+  <div class="card">
+    <h3>📖 Dampaknya di Masa Depan</h3>
+    <div id="simulation" class="small-desc">Silakan scan objek terlebih dahulu</div>
+      “Kebiasaan kecil dapat berdampak besar jika dilakukan terus menerus.”
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Powered by FuturaVision AI 🚀</p>
+</div>
+
+</body>
+</html>
