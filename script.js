@@ -1,4 +1,4 @@
-const URL = "https://teachablemachine.withgoogle.com/models/GHqleq0HT/";
+const URL = "https://teachablemachine.withgoogle.com/models/R8HTR4CcU/";
 
 let model, webcam, maxPredictions;
 let isFreeze = false;
@@ -179,11 +179,6 @@ function getImpactDetail(label) {
             return {
                 score: 70,
                 html: `🛍 <b>Kantong Plastik</b><br>📊 Grafik: limbah bulanan<br>📈 Impact: 70/100 (🔴 Tinggi)<br>💡 Gunakan tas kain`
-            };
-        case "kotak makan":
-            return {
-                score: 75,
-                html: `🍱 <b>Kotak Makan Plastik</b><br>📊 Grafik: limbah jangka panjang<br>📈 Impact: 75/100 (🔴 Tinggi)<br>💡 Gunakan reusable`
             };
         case "totebag":
             return {
